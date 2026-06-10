@@ -1,46 +1,36 @@
-
-def menu_principal():
-    mensaje = """
-1. Área Productos 
-
-2. Área Clientes 
-
-3. Salir del Sistema (Termina la ejecución))
-    """
-    print(mensaje)
+def menu_principal_mensaje():
+    print("MENU PRINCIPAL")
+    print("1. Gestionar Productos")
+    print("2. Gestionar Clientes")
+    print("3. Salir")
 
 def menu_productos_mensaje():
-    return """ 
-1 Cargar Producto 
-2 Modificar Producto 
-3 Ver Productos 
-4 Borrar Producto 
-5 Salir (Vuelve al Menú Principal) 
-    """
+    print("MENU PRODUCTOS")
+    print("1. Cargar Producto")
+    print("2. Modificar Producto")
+    print("3. Ver Productos")
+    print("4. Borrar Producto")
+    print("5. Salir")
 
-def menu_productos_complemento_mensaje():
-    mensaje = """
-──► 1 Ordenar por ID ASC 
-──► 2 Ordenar por Stock ASC 
-──► 3 Ordenar por nombre ASC 
-──► 4 Salir
-    """
-    print(mensaje)
+def menu_ordenar_productos_mensaje():
+    print("SUBMENU ORDENAR PRODUCTOS")
+    print("──► 1. Ordenar por ID ASC")
+    print("──► 2. Ordenar por Stock ASC")
+    print("──► 3. Ordenar por Nombre ASC")
+    print("4. Volver al menu anterior")
 
 def menu_clientes_mensaje():
-    mensaje = """
-1 Cargar Clientes 
-2 Modificar Clientes 
-3 Ver Clientes 
-4 Borrar Clientes 
-5 Salir (Vuelve al Menú Principal) 
-    """
-    print(mensaje)
-    
-    
-def menu_dos_complemento():
-    mensaje = """
-──► 1 Ordenar por ID ASC 
-──► 2 Ordenar por Apellido ASC 
-    """
-    print(mensaje)
+    print("MENU CLIENTES")
+    print("1. Cargar Cliente")
+    print("2. Modificar Cliente")
+    print("3. Ver Clientes")
+    print("4. Borrar Cliente")
+    print("5. Salir")
+
+def menu_ordenar_clientes_mensaje():
+    print("SUBMENU ORDENAR CLIENTES")
+    print("──► 1. Ordenar por ID ASC")
+    print("──► 2. Ordenar por Apellido ASC")
+    print("──► 3. Ordenar por Ciudad ASC")
+    print("──► 4. Filtrar por Ciudad (y ordenar por Apellido ASC)")
+    print("5. Volver al menu anterior")
