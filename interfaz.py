@@ -3,23 +3,29 @@ from mensajes import (
     menu_productos_mensaje,
     menu_clientes_mensaje,
     menu_ordenar_productos_mensaje,
-    menu_ordenar_clientes_mensaje
+    menu_ordenar_clientes_mensaje,
+    menu_ventas_mensaje
 )
-from logica import (
+# from logica import ()
+
+from validaciones import (
+    texto_letras
+)
+from productos import (
     cargar_productos_hardcodeados,
     mostrar_datos_productos,
-    do_selection_sort_productos,
+    do_selection_sort_asc_productos,
     modificar_producto,
     borrar_producto,
+)
+
+from clientes import (
     cargar_clientes_hardcodeado,
     mostrar_datos_clientes,
-    do_selection_sort_clientes,
+    do_selection_sort_asc_clientes,
     modificar_cliente,
     borrar_cliente,
     filtrar_clientes_por_ciudad
-)
-from validaciones import (
-    texto_letras
 )
 
 def menu_productos(lista_productos: list[list]):
@@ -79,17 +85,17 @@ def menu_productos_complemento(lista_productos: list[list]):
         opcion = input('ingrese una opcion entre 1-4: ')
         match opcion:
             case '1':
-                do_selection_sort_productos(lista_productos, 0)
+                do_selection_sort_asc_productos(lista_productos, 0)
                 mostrar_datos_productos(lista_productos)
                 os.system('pause')
                 os.system('cls')
             case '2':
-                do_selection_sort_productos(lista_productos, 2)
+                do_selection_sort_asc_productos(lista_productos, 2)
                 mostrar_datos_productos(lista_productos)
                 os.system('pause')
                 os.system('cls')
             case '3':
-                do_selection_sort_productos(lista_productos, 1)
+                do_selection_sort_asc_productos(lista_productos, 1)
                 mostrar_datos_productos(lista_productos)
                 os.system('pause')
                 os.system('cls')
@@ -156,17 +162,17 @@ def menu_clientes_complemento(lista_clientes: list[dict]):
         opcion = input('ingrese una opcion entre 1-5: ')
         match opcion:
             case '1':
-                do_selection_sort_clientes(lista_clientes, 'id')
+                do_selection_sort_asc_clientes(lista_clientes, 'id')
                 mostrar_datos_clientes(lista_clientes)
                 os.system('pause')
                 os.system('cls')
             case '2':
-                do_selection_sort_clientes(lista_clientes, 'apellido')
+                do_selection_sort_asc_clientes(lista_clientes, 'apellido')
                 mostrar_datos_clientes(lista_clientes)
                 os.system('pause')
                 os.system('cls')
             case '3':
-                do_selection_sort_clientes(lista_clientes, 'ciudad')
+                do_selection_sort_asc_clientes(lista_clientes, 'ciudad')
                 mostrar_datos_clientes(lista_clientes)
                 os.system('pause')
                 os.system('cls')
@@ -177,8 +183,34 @@ def menu_clientes_complemento(lista_clientes: list[dict]):
                 if len(lista_filtrada) == 0:
                     print("no se encontraron clientes en la ciudad:", ciudad_a_filtrar)
                 else:
-                    do_selection_sort_clientes(lista_filtrada, 'apellido')
+                    do_selection_sort_asc_clientes(lista_filtrada, 'apellido')
                     mostrar_datos_clientes(lista_filtrada)
+                os.system('pause')
+                os.system('cls')
+            case '5':
+                bucle = False
+
+def menu_ventas(lista_ventas: list[dict]):
+    bucle = True
+    while(bucle):
+        os.system('cls')
+        menu_ventas_mensaje()
+        opcion = input('ingrese una opcion entre 1-5: ')
+        match opcion:
+            case '1':
+                print("opcion cargar venta pendiente.")
+                os.system('pause')
+                os.system('cls')
+            case '2':
+                print("opcion modificar venta pendiente.")
+                os.system('pause')
+                os.system('cls')
+            case '3':
+                print("opcion ver ventas pendiente.")
+                os.system('pause')
+                os.system('cls')
+            case '4':
+                print("opcion borrar venta pendiente.")
                 os.system('pause')
                 os.system('cls')
             case '5':

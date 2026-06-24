@@ -2,7 +2,8 @@ def menu_principal_mensaje():
     print("MENU PRINCIPAL")
     print("1. Gestionar Productos")
     print("2. Gestionar Clientes")
-    print("3. Salir")
+    print("3. Gestionar Ventas")
+    print("4. Salir")
 
 def menu_productos_mensaje():
     print("MENU PRODUCTOS")
@@ -34,3 +35,11 @@ def menu_ordenar_clientes_mensaje():
     print("──► 3. Ordenar por Ciudad ASC")
     print("──► 4. Filtrar por Ciudad (y ordenar por Apellido ASC)")
     print("5. Volver al menu anterior")
+
+def menu_ventas_mensaje():
+    print("MENU VENTAS")
+    print("1. Cargar Venta")
+    print("2. Modificar Venta")
+    print("3. Ver Ventas")
+    print("4. Borrar Venta")
+    print("5. Salir")
